@@ -7,7 +7,9 @@ module.exports = {
         "eslint:recommended",
         "plugin:react/recommended",
         "plugin:@typescript-eslint/recommended",
-        "plugin:prettier/recommended"
+        "plugin:prettier/recommended",
+        "plugin:import/typescript",
+        "plugin:import/recommended"
     ],
     "overrides": [
     ],
@@ -39,7 +41,7 @@ module.exports = {
           ],
           "pathGroups": [
             {
-              "pattern": "{react*,react*/**}",
+              "pattern": "{react*,react*/**,next*,next*/**}",
               "group": "external",
               "position": "before"
             },
