@@ -8,9 +8,9 @@ on:
     branches:
       - main  # main 브랜치에 PR할 때 실행한다.
 env: # 사용할 env	
-  AWS_REGION: 
-  ECR_REGISTRY: 
-  ECR_REPOSITORY: 
+  AWS_REGION: ap-northeast-2
+  ECR_REGISTRY: 857704633880.dkr.ecr.ap-northeast-2.amazonaws.com/devlog
+  ECR_REPOSITORY: devlog
 jobs:	
   deploy:
     name: Deploy
