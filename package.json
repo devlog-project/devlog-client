@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "deploy": "next build && next export",
     "prepare": "husky install",
     "lint-staged": "lint-staged"
   },
