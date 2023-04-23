@@ -11,7 +11,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         <Header />
-        {children}
+        <main className="max-w-7xl m-auto h-screen"> {children} </main>
       </body>
     </html>
   );
