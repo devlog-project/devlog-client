@@ -2,8 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  max-width: 1440px;
-  margin: 0 auto;
-  width: 100%;
+@font-face {
+  font-family: "NEXON Lv1 Gothic OTF";
+  font-style: bold;
+  font-weight: bold;
+  src: url("/fonts/NEXON\ Lv1\ Gothic\ Low\ OTF\ Bold.eot") format("eot"), url("/fonts/NEXON\ Lv1\ Gothic\ Low\ OTF\ Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "NEXON Lv1 Gothic OTF";
+  font-style: initial;
+  font-weight: initial;
+  src: url("/fonts/NEXON\ Lv1\ Gothic\ Low\ OTF.eot") format("eot"), url("/fonts/NEXON\ Lv1\ Gothic\ Low\ OTF.woff") format("woff");
+}
+
+@font-face {
+  font-family: "NEXON Lv1 GOthic OTF";
+  font-style: normal;
+  font-weight: normal;
+  src: url("//fonts/NEXON\ Lv1\ Gothic\ Low\ OTF\ Light.eot") format("eot"), url("/fonts/NEXON\ Lv1\ Gothic\ Low\ OTF\ Light.woff") format("woff")
+}
+
+* {
+  font-family: "NEXON Lv1 Gothic OTF";
+}
+
+.hover-effect {
+  cursor: pointer;
+}
+
+.hover-effect::after {
+  display: block;
+  content: '';
+  border-bottom: solid 2px #C8E0E6;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+
+.hover-effect:hover::after {
+  transform: scaleX(1);
+}
+
+.hover-effect::after {
+  transform-origin: 100% 50%;
 }
