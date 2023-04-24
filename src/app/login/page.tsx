@@ -1,8 +1,9 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import { useRouter } from 'next/navigation';
 
-import Button from '@/components/Common/Button';
+const DynamicButton = dynamic(() => import('@/components/Common/Button'));
 
 function Login() {
   const router = useRouter();
@@ -13,12 +14,10 @@ function Login() {
     router.push(KAKAO_AUTH_URL);
   };
 
-  if (typeof window !== 'object') return <></>;
-
   return (
     <section>
       <div>
-        <Button
+        <DynamicButton
           title="카카오 로그인"
           imgUrl="Kakao.png"
           bgColor="#fae100"
