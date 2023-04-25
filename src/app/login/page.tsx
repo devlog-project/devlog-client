@@ -3,7 +3,9 @@
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/navigation';
 
-const DynamicButton = dynamic(() => import('@/components/Common/Button'));
+const DynamicButton = dynamic(() => import('@/components/Common/Button'), {
+  
+});
 
 function Login() {
   const router = useRouter();
