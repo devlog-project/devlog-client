@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 import { useRouter } from 'next/navigation';
 
 const DynamicButton = dynamic(() => import('@/components/Common/Button'), {
-  
+  ssr: false,
 });
 
 function Login() {
@@ -22,7 +22,7 @@ function Login() {
         <DynamicButton
           title="카카오 로그인"
           imgUrl="Kakao.png"
-          bgColor="#fae100"
+          oauth="kakao"
           onClick={handleKaKaoLogin}
         />
       </div>
