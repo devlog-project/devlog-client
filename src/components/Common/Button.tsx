@@ -26,11 +26,11 @@ function Button({ title, imgUrl, oauth, color, onClick }: ButtonProps) {
   return (
     <button
       type="button"
-      className={`${bgColor} flex items-center px-5 py-1 box-border rounded-md gap-1`}
+      className={`${bgColor} flex items-center justify-between px-5 py-1 box-border rounded-md gap-1`}
       onClick={onClick}
     >
-      <span className="font-bold"> {title} </span>
       <Image src={`/images/${imgUrl}`} alt={title} width={30} height={30} />
+      <span className="font-bold"> {title} </span>
     </button>
   );
 }
