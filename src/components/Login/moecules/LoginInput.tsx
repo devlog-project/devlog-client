@@ -1,3 +1,5 @@
+import type { UseFormRegister, RegisterOptions, FieldErrors, FieldValues } from 'react-hook-form';
+
 import Input from '@/components/Common/Input';
 
 interface LoginInputProps {
@@ -5,17 +7,40 @@ interface LoginInputProps {
   id: string;
   title: string;
   placeholder: string;
-  error?: any;
+  name: string;
+  register?: UseFormRegister<any>;
+  rules?: RegisterOptions;
+  errors: FieldErrors<FieldValues>;
 }
 
-function LoginInput({ id, type, title, placeholder, error }: LoginInputProps) {
+function LoginInput({
+  id,
+  type,
+  title,
+  placeholder,
+  register,
+  name,
+  rules,
+  errors,
+}: LoginInputProps) {
   return (
     <div className="flex flex-col gap-1.5 h-24">
       <label className="font-bold" htmlFor={id}>
         {title}
       </label>
-      <Input id={id} type={type} placeholder={placeholder} />
-      {error && <span className="text-rose-600 font-bold self-end"> {'에러입니다.'} </span>}
+      <Input
+        id={id}
+        type={type}
+        placeholder={placeholder}
+        register={register}
+        name={name}
+        rules={rules}
+      />
+      {errors[name] && (
+        <span className="text-rose-600 font-bold self-end text-sm py-[3px]">
+          {errors[name]?.message?.toString()}
+        </span>
+      )}
     </div>
   );
 }
