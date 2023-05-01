@@ -9,9 +9,14 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+      </head>
       <body>
         <Header />
-        <main className="max-w-7xl m-auto h-screen"> {children} </main>
+        <main className="max-w-7xl m-auto relative max-h-screen flex flex-col items-center h-full">
+          {children}
+        </main>
       </body>
     </html>
   );
