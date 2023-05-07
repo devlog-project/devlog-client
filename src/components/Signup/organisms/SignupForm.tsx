@@ -1,37 +1,32 @@
+'use client';
+
 import { useForm } from 'react-hook-form';
 import type { FieldValues } from 'react-hook-form';
 
 import FormInput from '@/components/Common/moecules/FormInput';
-import Modal from '@/components/Common/moecules/Modal';
 import { REGEX } from '@/constatns/regex';
 import { MESSAGE } from '@/constatns/validateMessage';
-import useVisible from '@/hooks/useVisible';
-import { postLoginUser } from '@/networks/login';
 import { User } from '@/types/User';
 
-function LoginForm() {
+import VerifyEmail from '../moecules/VerifyEmail';
+
+function SignupForm() {
   const {
     register,
     handleSubmit,
+    watch,
     formState: { errors },
-  } = useForm<Pick<User, 'username' | 'password'>>({
+  } = useForm<User>({
     mode: 'onBlur',
     reValidateMode: 'onBlur',
   });
-  const [isVisible, handleChangeVisible] = useVisible();
 
-  const handleLoginSubmit = async (data: FieldValues) => {
-    const { username, password } = data;
-
-    if (username && password) {
-      const response = await postLoginUser(data);
-
-      console.log(response);
-    }
+  const handleSignupSubmit = async (data: FieldValues) => {
+    console.log(data);
   };
 
   return (
-    <form onSubmit={handleSubmit(handleLoginSubmit)} className="w-2/6 flex flex-col gap-5">
+    <form onSubmit={handleSubmit(handleSignupSubmit)} className="w-2/6 flex flex-col gap-5">
       <FormInput
         id="username"
         type="text"
@@ -49,6 +44,19 @@ function LoginForm() {
         }}
       />
       <FormInput
+        id="nickname"
+        type="text"
+        title="닉네임"
+        name="nickname"
+        placeholder={MESSAGE.nickname.required}
+        errors={errors}
+        register={register}
+        rules={{
+          required: MESSAGE.nickname.required,
+        }}
+      />
+      <VerifyEmail register={register} errors={errors} watch={watch} />
+      <FormInput
         id="password"
         type="password"
         title="비밀번호"
@@ -64,18 +72,11 @@ function LoginForm() {
           },
         }}
       />
-      <span
-        className="cursor-pointer self-end text-black hover:font-bold"
-        onClick={handleChangeVisible}
-      >
-        비밀번호를 찾으시겠어요?
-      </span>
       <button type="submit" className="px-5 py-1 bg-blue-400 text-white rounded-md">
-        로그인
+        회원가입
       </button>
-      <Modal visible={isVisible} title="비밀번호 찾기" onCancel={handleChangeVisible} />
     </form>
   );
 }
 
-export default LoginForm;
+export default SignupForm;
