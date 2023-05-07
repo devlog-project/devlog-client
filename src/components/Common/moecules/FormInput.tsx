@@ -24,7 +24,7 @@ function FormInput({
   errors,
 }: LoginInputProps) {
   return (
-    <div className="flex flex-col gap-1.5 h-24">
+    <div className="w-full flex flex-col gap-1.5 h-24">
       <label className="font-bold" htmlFor={id}>
         {title}
       </label>
