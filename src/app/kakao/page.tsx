@@ -3,7 +3,7 @@
 import { useSearchParams } from 'next/navigation';
 import { useEffect } from 'react';
 
-import LoadingSpinner from '@/components/Common/LoadingSpinner';
+import LoadingSpinner from '@/components/Common/atoms/LoadingSpinner';
 
 function Kakao() {
   const code = useSearchParams().get('code');
