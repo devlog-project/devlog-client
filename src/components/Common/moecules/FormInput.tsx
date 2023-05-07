@@ -1,6 +1,6 @@
 import type { UseFormRegister, RegisterOptions, FieldErrors, FieldValues } from 'react-hook-form';
 
-import Input from '@/components/Common/Input';
+import Input from '../atoms/Input';
 
 interface LoginInputProps {
   type: string;
@@ -13,7 +13,7 @@ interface LoginInputProps {
   errors: FieldErrors<FieldValues>;
 }
 
-function LoginInput({
+function FormInput({
   id,
   type,
   title,
@@ -45,4 +45,4 @@ function LoginInput({
   );
 }
 
-export default LoginInput;
+export default FormInput;

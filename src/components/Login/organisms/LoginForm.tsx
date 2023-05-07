@@ -1,14 +1,13 @@
 import { useForm } from 'react-hook-form';
 import type { FieldValues } from 'react-hook-form';
 
-import Modal from '@/components/Common/Modal';
+import FormInput from '@/components/Common/moecules/FormInput';
+import Modal from '@/components/Common/moecules/Modal';
 import { REGEX } from '@/constatns/regex';
 import { MESSAGE } from '@/constatns/validateMessage';
 import useVisible from '@/hooks/useVisible';
 import { postLoginUser } from '@/networks/login';
 import { User } from '@/types/User';
-
-import LoginInput from '../moecules/LoginInput';
 
 function LoginForm() {
   const {
@@ -33,7 +32,7 @@ function LoginForm() {
 
   return (
     <form onSubmit={handleSubmit(handleLoginSubmit)} className="w-2/6 flex flex-col gap-5">
-      <LoginInput
+      <FormInput
         id="username"
         type="text"
         title="아이디"
@@ -49,7 +48,7 @@ function LoginForm() {
           },
         }}
       />
-      <LoginInput
+      <FormInput
         id="password"
         type="password"
         title="비밀번호"
