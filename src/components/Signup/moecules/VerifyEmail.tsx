@@ -64,7 +64,7 @@ function VerifyEmail({ register, errors, watch }: VerifyEmailProps) {
         <button
           type="button"
           onClick={handleVerifyEmail}
-          className="w-[75px] py-1.5 bg-blue-400 text-white box-border"
+          className="w-[100px] py-1.5 bg-blue-400 text-white box-border"
         >
           인증
         </button>
@@ -86,9 +86,9 @@ function VerifyEmail({ register, errors, watch }: VerifyEmailProps) {
           <button
             type="button"
             onClick={handleVerifyCode}
-            className="w-[75px] py-1.5 bg-blue-400 text-white box-border"
+            className="w-[100px] py-1.5 bg-blue-400 text-white box-border"
           >
-            확인
+            코드 확인
           </button>
         </div>
       )}
