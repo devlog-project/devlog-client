@@ -1,6 +1,6 @@
 import { useRouter } from 'next/navigation';
 
-import Button from '@/components/Common/Button';
+import Button from '@/components/Common/atoms/Button';
 
 function SocialLogin() {
   const router = useRouter();

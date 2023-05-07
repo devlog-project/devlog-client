@@ -3,7 +3,8 @@ export type User = {
   password: string;
   nickname: string;
   email: string;
-  profileurl: string;
-  issocial: boolean;
-  isenabled: boolean;
+  profileImage: string;
+  isDuplicateUsername: boolean;
+  isDuplicateEmail: boolean;
+  isAuthenticateEmail: boolean;
 };

@@ -1,7 +1,5 @@
-'use client';
+import SignupTemplates from '@/components/Signup/templates/SignupTemplates';
 
-function Signup() {
-  return <div> 회원가입 페이지 </div>;
+export default function Signup() {
+  return <SignupTemplates />;
 }
-
-export default Signup;
